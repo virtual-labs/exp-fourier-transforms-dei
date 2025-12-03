@@ -1,19 +1,34 @@
-Step1: Open the Fourier Transform simulation page.
+### Procedure
 
-Step2: Select the type of input signal provided in the interface.
+1. **Input Signal Sequence**
+   - Enter the discrete signal values x[n] into the text fields provided.
+   - Use the **Add Input** button to increase the number of samples.
+   - Use the **Remove Input** button if any input needs to be deleted.
 
-Step3: Enter the amplitude of the signal.
+2. **Select Transform Method**
+   - Choose either:
+     - **Discrete Fourier Transform (DFT)** panel for manual DFT computation
+     - **Fast Fourier Transform (FFT)** panel for efficient transformation
 
-Step4: Enter the frequency of the input signal.
+3. **Simulate the Transformation**
+   - After entering the complete sequence, click the **Simulate** button.
+   - The system will compute:
+     - Real part of the frequency components
+     - Imaginary part of the frequency components
+     - Complete DFT/FFT result representation
 
-Step5: Set the sampling frequency as required.
+4. **Observe Output Results**
+   - Check the results displayed in the tabular format under the “RESULTS” section.
+   - Each frequency index k will show its corresponding:
+     - Real component
+     - Imaginary component
+     - Magnitude and/or combined frequency-domain value depending on implementation
 
-Step6: Specify the number of samples (if the option is available).
+5. **Analyze Frequency Characteristics**
+   - Compare DFT and FFT results to verify that both produce identical frequency-domain results.
+   - Notice how FFT performs the same operation more efficiently for larger data sequences.
 
-Step7: Click on the Generate Signal button to display the time-domain waveform.
+6. **Repeat for Different Signals (Optional)**
+   - Modify input data values to study the effect of different time-domain signals on frequency components.
+   - Try sequences like sinusoidal waves, impulses, and step functions for better understanding.
 
-Step8: Click on the Compute DFT/FFT button to obtain the frequency-domain output.
-
-Step9: Observe the magnitude and phase spectrum generated on the screen.
-
-Step10: Modify parameters (amplitude, frequency, sampling rate) and repeat the simulation to study their effects.
