@@ -15,10 +15,8 @@
         "c": "Color domain is unrelated to Fourier methods.",
         "d": "Energy analysis is a by-product, not the primary goal."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "The Discrete Fourier Transform is applied to what type of data?",
       "answers": {
@@ -33,10 +31,8 @@
         "c": "DFT applies to any finite-length sequence.",
         "d": "DFT is not limited to random data."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "What is the output of a DFT?",
       "answers": {
@@ -51,10 +47,8 @@
         "c": "DFT is not a compression function.",
         "d": "DFT does not introduce delays."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "What does FFT stand for?",
       "answers": {
@@ -69,10 +63,8 @@
         "c": "FFT is not a filtering method.",
         "d": "This is not a standard term."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "Why is FFT preferred over DFT in practical applications?",
       "answers": {
@@ -87,10 +79,8 @@
         "c": "Both DFT and FFT require sampled data.",
         "d": "FFT is for digital signals only."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "Which mathematical function forms the basis of Fourier Transform?",
       "answers": {
@@ -105,10 +95,8 @@
         "c": "Logarithms do not form Fourier basis.",
         "d": "Random variables are not basis functions."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "DFT assumes that the input signal is:",
       "answers": {
@@ -123,10 +111,8 @@
         "c": "DFT does not require zero mean.",
         "d": "Frequency content may vary."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "Which of the following is a key requirement before applying DFT?",
       "answers": {
@@ -141,10 +127,8 @@
         "c": "Filtering is optional, not mandatory.",
         "d": "DFT can work on noisy signals."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "The FFT algorithm is mainly used to:",
       "answers": {
@@ -159,10 +143,8 @@
         "c": "FFT itself doesn’t remove noise.",
         "d": "Resampling is performed by interpolation, not FFT."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
       "question": "Which domain is most useful for identifying periodic components in a signal?",
       "answers": {
@@ -177,8 +159,7 @@
         "c": "Time domain doesn't always reveal hidden periodic structure.",
         "d": "Amplitude domain is not a standard analytical domain."
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     }
   ]
 }
