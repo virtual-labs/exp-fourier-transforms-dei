@@ -2,164 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Fourier Transform helps in analyzing a signal in which domain?",
+      "question": "The Discrete Fourier Transform (DFT) converts a signal from:",
       "answers": {
-        "a": "Frequency domain",
-        "b": "Spatial domain",
-        "c": "Color domain",
-        "d": "Energy domain"
+        "a": "Frequency domain to time domain",
+        "b": "Time domain to frequency domain",
+        "c": "Matrix form to scalar form",
+        "d": "Continuous to discrete domain only"
       },
-      "explanations": {
-        "a": "Fourier Transform converts a time-domain signal into its frequency components.",
-        "b": "Spatial domain is used in image processing, not basic Fourier analysis.",
-        "c": "Color domain is unrelated to Fourier methods.",
-        "d": "Energy analysis is a by-product, not the primary goal."
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The DFT of an N-point sequence produces:",
+      "answers": {
+        "a": "N frequency components",
+        "b": "N² frequency components",
+        "c": "One frequency value",
+        "d": "Infinite components"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "The Discrete Fourier Transform is applied to what type of data?",
+      "question": "The computational complexity of direct DFT is:",
       "answers": {
-        "a": "Discrete sampled signals",
-        "b": "Continuous analog signals",
-        "c": "Only periodic functions",
-        "d": "Only random signals"
+        "a": "O(N)",
+        "b": "O(N log N)",
+        "c": "O(N²)",
+        "d": "O(log N)"
       },
-      "explanations": {
-        "a": "DFT works on discrete-time sequences obtained after sampling.",
-        "b": "Analog signals must be sampled first.",
-        "c": "DFT applies to any finite-length sequence.",
-        "d": "DFT is not limited to random data."
+      "correctAnswer": "c"
+    },
+    {
+      "question": "The Fast Fourier Transform (FFT) reduces complexity to:",
+      "answers": {
+        "a": "O(N²)",
+        "b": "O(N log N)",
+        "c": "O(N³)",
+        "d": "O(1)"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The fundamental basis functions of DFT are:",
+      "answers": {
+        "a": "Polynomials",
+        "b": "Complex exponentials",
+        "c": "Logarithmic functions",
+        "d": "Random waves"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Nyquist frequency is defined as:",
+      "answers": {
+        "a": "Twice the sampling frequency",
+        "b": "Half the sampling frequency",
+        "c": "Equal to sampling frequency",
+        "d": "Zero frequency"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Aliasing occurs when:",
+      "answers": {
+        "a": "Sampling frequency is sufficiently high",
+        "b": "Sampling frequency is less than twice the signal frequency",
+        "c": "Signal is constant",
+        "d": "FFT is applied"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "The inverse DFT (IDFT) is used to:",
+      "answers": {
+        "a": "Convert frequency domain data back to time domain",
+        "b": "Increase sampling rate",
+        "c": "Reduce noise automatically",
+        "d": "Compute derivatives"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "What is the output of a DFT?",
+      "question": "The FFT algorithm is based on:",
       "answers": {
-        "a": "A set of frequency components",
-        "b": "A filtered signal",
-        "c": "A compressed version of the signal",
-        "d": "A time-delayed signal"
-      },
-      "explanations": {
-        "a": "DFT outputs magnitudes and phases across discrete frequency bins.",
-        "b": "DFT itself does not filter.",
-        "c": "DFT is not a compression function.",
-        "d": "DFT does not introduce delays."
+        "a": "Divide and conquer strategy",
+        "b": "Matrix inversion",
+        "c": "Differential equations",
+        "d": "Interpolation only"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "What does FFT stand for?",
+      "question": "Convolution in time domain corresponds to:",
       "answers": {
-        "a": "Fast Fourier Transform",
-        "b": "Finite Frequency Table",
-        "c": "Filtered Fourier Technique",
-        "d": "Frequency Function Transform"
+        "a": "Addition in frequency domain",
+        "b": "Multiplication in frequency domain",
+        "c": "Differentiation in frequency domain",
+        "d": "Integration in frequency domain"
       },
-      "explanations": {
-        "a": "FFT is an optimized algorithm for computing the DFT.",
-        "b": "No such term in DSP.",
-        "c": "FFT is not a filtering method.",
-        "d": "This is not a standard term."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Why is FFT preferred over DFT in practical applications?",
-      "answers": {
-        "a": "It is faster and computationally efficient",
-        "b": "It is more accurate",
-        "c": "It requires no sampling",
-        "d": "It works only on analog signals"
-      },
-      "explanations": {
-        "a": "FFT reduces computational complexity from N² to N log N.",
-        "b": "DFT and FFT provide identical results; FFT is just faster.",
-        "c": "Both DFT and FFT require sampled data.",
-        "d": "FFT is for digital signals only."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Which mathematical function forms the basis of Fourier Transform?",
-      "answers": {
-        "a": "Sinusoids",
-        "b": "Polynomials",
-        "c": "Logarithms",
-        "d": "Random variables"
-      },
-      "explanations": {
-        "a": "Fourier analysis decomposes signals into sums of sinusoids.",
-        "b": "Polynomials are unrelated to Fourier decomposition.",
-        "c": "Logarithms do not form Fourier basis.",
-        "d": "Random variables are not basis functions."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "DFT assumes that the input signal is:",
-      "answers": {
-        "a": "Periodic with period N",
-        "b": "Aperiodic",
-        "c": "Always zero-mean",
-        "d": "Always high frequency"
-      },
-      "explanations": {
-        "a": "DFT treats the finite sample sequence as one period of a periodic signal.",
-        "b": "Aperiodicity is not assumed.",
-        "c": "DFT does not require zero mean.",
-        "d": "Frequency content may vary."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Which of the following is a key requirement before applying DFT?",
-      "answers": {
-        "a": "The signal must be sampled",
-        "b": "The signal must be analog",
-        "c": "The signal must be filtered",
-        "d": "The signal must be noise-free"
-      },
-      "explanations": {
-        "a": "Sampling converts the continuous signal into discrete form for DFT.",
-        "b": "DFT does not process analog signals directly.",
-        "c": "Filtering is optional, not mandatory.",
-        "d": "DFT can work on noisy signals."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "The FFT algorithm is mainly used to:",
-      "answers": {
-        "a": "Speed up DFT calculations",
-        "b": "Correct phase distortion",
-        "c": "Remove noise from signals",
-        "d": "Change sampling rate"
-      },
-      "explanations": {
-        "a": "FFT is an optimized method for computing the DFT rapidly.",
-        "b": "Phase correction is not FFT’s purpose.",
-        "c": "FFT itself doesn’t remove noise.",
-        "d": "Resampling is performed by interpolation, not FFT."
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Which domain is most useful for identifying periodic components in a signal?",
-      "answers": {
-        "a": "Frequency domain",
-        "b": "Spatial domain",
-        "c": "Time domain",
-        "d": "Amplitude domain"
-      },
-      "explanations": {
-        "a": "Periodic or repeating patterns become clear when viewed in frequency domain.",
-        "b": "Spatial domain is used in images.",
-        "c": "Time domain doesn't always reveal hidden periodic structure.",
-        "d": "Amplitude domain is not a standard analytical domain."
-      },
-      "correctAnswer": "a"
+      "correctAnswer": "b"
     }
   ]
 }
