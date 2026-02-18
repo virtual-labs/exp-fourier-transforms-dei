@@ -2,102 +2,102 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "The Discrete Fourier Transform (DFT) converts a signal from:",
+      "question": "The mathematical expression of DFT is based on:",
       "answers": {
-        "a": "Frequency domain to time domain",
-        "b": "Time domain to frequency domain",
-        "c": "Matrix form to scalar form",
-        "d": "Continuous to discrete domain only"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "The DFT of an N-point sequence produces:",
-      "answers": {
-        "a": "N frequency components",
-        "b": "N² frequency components",
-        "c": "One frequency value",
-        "d": "Infinite components"
+        "a": "Complex exponential basis functions",
+        "b": "Polynomial interpolation",
+        "c": "Matrix inversion",
+        "d": "Differential equations"
       },
       "correctAnswer": "a"
     },
     {
-      "question": "The computational complexity of direct DFT is:",
+      "question": "For a real-valued time signal, the DFT spectrum exhibits:",
       "answers": {
-        "a": "O(N)",
-        "b": "O(N log N)",
-        "c": "O(N²)",
-        "d": "O(log N)"
-      },
-      "correctAnswer": "c"
-    },
-    {
-      "question": "The Fast Fourier Transform (FFT) reduces complexity to:",
-      "answers": {
-        "a": "O(N²)",
-        "b": "O(N log N)",
-        "c": "O(N³)",
-        "d": "O(1)"
+        "a": "Random symmetry",
+        "b": "Conjugate symmetry",
+        "c": "Zero values only",
+        "d": "Only positive frequencies"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "The fundamental basis functions of DFT are:",
+      "question": "Parseval’s theorem states that:",
       "answers": {
-        "a": "Polynomials",
-        "b": "Complex exponentials",
-        "c": "Logarithmic functions",
-        "d": "Random waves"
+        "a": "Energy in time domain equals energy in frequency domain",
+        "b": "DFT reduces noise",
+        "c": "Sampling frequency doubles",
+        "d": "FFT changes amplitude"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "Spectral leakage occurs due to:",
+      "answers": {
+        "a": "Infinite sampling frequency",
+        "b": "Finite-length observation of signal",
+        "c": "Matrix multiplication",
+        "d": "Using FFT instead of DFT"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Nyquist frequency is defined as:",
+      "question": "Zero-padding a signal before applying DFT primarily:",
       "answers": {
-        "a": "Twice the sampling frequency",
-        "b": "Half the sampling frequency",
+        "a": "Improves frequency resolution visually",
+        "b": "Removes aliasing completely",
+        "c": "Changes original signal values",
+        "d": "Eliminates noise"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The FFT algorithm requires N to be:",
+      "answers": {
+        "a": "A prime number always",
+        "b": "A power of 2 in radix-2 FFT",
         "c": "Equal to sampling frequency",
-        "d": "Zero frequency"
+        "d": "Odd number only"
       },
       "correctAnswer": "b"
     },
     {
-      "question": "Aliasing occurs when:",
+      "question": "Circular convolution in time domain corresponds to:",
       "answers": {
-        "a": "Sampling frequency is sufficiently high",
-        "b": "Sampling frequency is less than twice the signal frequency",
-        "c": "Signal is constant",
-        "d": "FFT is applied"
-      },
-      "correctAnswer": "b"
-    },
-    {
-      "question": "The inverse DFT (IDFT) is used to:",
-      "answers": {
-        "a": "Convert frequency domain data back to time domain",
-        "b": "Increase sampling rate",
-        "c": "Reduce noise automatically",
-        "d": "Compute derivatives"
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "The FFT algorithm is based on:",
-      "answers": {
-        "a": "Divide and conquer strategy",
-        "b": "Matrix inversion",
-        "c": "Differential equations",
-        "d": "Interpolation only"
-      },
-      "correctAnswer": "a"
-    },
-    {
-      "question": "Convolution in time domain corresponds to:",
-      "answers": {
-        "a": "Addition in frequency domain",
-        "b": "Multiplication in frequency domain",
+        "a": "Multiplication in frequency domain",
+        "b": "Addition in frequency domain",
         "c": "Differentiation in frequency domain",
         "d": "Integration in frequency domain"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The DFT assumes the input sequence is:",
+      "answers": {
+        "a": "Non-periodic",
+        "b": "Finite but periodically extended",
+        "c": "Continuous only",
+        "d": "Infinite length"
+      },
+      "correctAnswer": "b"
+    },
+    {
+      "question": "Aliasing can be avoided by:",
+      "answers": {
+        "a": "Sampling above Nyquist rate",
+        "b": "Reducing signal length",
+        "c": "Using smaller FFT size",
+        "d": "Ignoring high frequencies"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "The main practical advantage of FFT over direct DFT is:",
+      "answers": {
+        "a": "Higher amplitude output",
+        "b": "Reduced computational time",
+        "c": "Improved signal accuracy",
+        "d": "Elimination of noise"
       },
       "correctAnswer": "b"
     }
