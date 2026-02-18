@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFT & FFT Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .main-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .calculator-container {
+            flex: 1;
+            min-width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .dft-container {
+            border-top: 4px solid #3498db;
+        }
+        .fft-container {
+            border-top: 4px solid #e74c3c;
+        }
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .dft-container h2 {
+            color: #3498db;
+        }
+        .fft-container h2 {
+            color: #e74c3c;
+        }
+        input[type="number"] {
+            width: 80px;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .dft-container button {
+            background-color: #3498db;
+            color: white;
+        }
+        .dft-container button:hover {
+            background-color: #2980b9;
+        }
+        .fft-container button {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .fft-container button:hover {
+            background-color: #c0392b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .info-text {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        .sequence-inputs {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button-group {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .main-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .main-heading h1 {
+            display: inline-block;
+            background-color: #e3f2fd;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .main-heading h1 {
+            margin: 0;
+            color: #000000;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        @media (max-width: 1100px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .calculator-container {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-heading">
+        <h1>Fourier Transforms with procedures Discrete Fourier Transforms and Fast Fourier Transforms.</h1>
+    </div>
+    <div class="main-container">
+        <!-- DFT Calculator -->
+        <div class="calculator-container dft-container">
+            <h2>Discrete Fourier Transform (DFT)</h2>
+            <p><center>Enter the values of the sequence (x[n]):</center></p>
+            <div class="sequence-inputs" id="dft-sequence-inputs">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+            </div>
+            <div class="button-group">
+                <button onclick="addDFTInput()">ADD INPUT</button>
+                <button onclick="removeDFTInput()">REMOVE INPUT</button>
+                <button onclick="calculateDFT()">SIMULATE</button>
+            </div>
+
+            <h3>RESULTS</h3>
+            <table id="dft-table">
+                <thead>
+                    <tr>
+                        <th>k<br><span class="info-text">frequency bin</span></th>
+                        <th>Real Part<br><span class="info-text">cosine component</span></th>
+                        <th>Imaginary Part<br><span class="info-text">sine component</span></th>
+                        <th>DFT(k)<br><span class="info-text">frequency content</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- FFT Calculator -->
+        <div class="calculator-container fft-container">
+            <h2>Fast Fourier Transform (FFT)</h2>
+            <p><center>Enter the values of the sequence (x[n]):</center></p>
+            <div class="sequence-inputs" id="fft-sequence-inputs">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+                <input type="number" step="any" value="0">
+            </div>
+            <div class="button-group">
+                <button onclick="addFFTInput()">ADD INPUT</button>
+                <button onclick="removeFFTInput()">REMOVE INPUT</button>
+                <button onclick="calculateFFT()">SIMULATE</button>
+            </div>
+
+            <h3>RESULTS</h3>
+            <table id="fft-table">
+                <thead>
+                    <tr>
+                        <th>k<br><span class="info-text">frequency bin</span></th>
+                        <th>Real Part<br><span class="info-text">cosine component</span></th>
+                        <th>Imaginary Part<br><span class="info-text">sine component</span></th>
+                        <th>FFT(k)<br><span class="info-text">frequency content</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // DFT Functions
+        function addDFTInput() {
+            const inputContainer = document.getElementById("dft-sequence-inputs");
+            const newInput = document.createElement("input");
+            newInput.type = "number";
+            newInput.step = "any";
+            newInput.value = "0";
+            inputContainer.appendChild(newInput);
+        }
+
+        function removeDFTInput() {
+            const inputContainer = document.getElementById("dft-sequence-inputs");
+            if (inputContainer.children.length > 1) {
+                inputContainer.removeChild(inputContainer.lastElementChild);
+            } else {
+                alert("You need at least one input box.");
+            }
+        }
+
+        function calculateDFT() {
+            const inputs = document.querySelectorAll("#dft-sequence-inputs input");
+            const x = Array.from(inputs).map(input => parseFloat(input.value));
+            const N = x.length;
+            const dft = [];
+
+            for (let k = 0; k < N; k++) {
+                let real = 0;
+                let imag = 0;
+
+                for (let n = 0; n < N; n++) {
+                    const angle = -2 * Math.PI * k * n / N;
+                    real += x[n] * Math.cos(angle);
+                    imag += x[n] * Math.sin(angle);
+                }
+
+                dft.push({ real: real.toFixed(4), imag: imag.toFixed(4) });
+            }
+
+            displayDFTResults(dft);
+        }
+
+        function displayDFTResults(dft) {
+            const tableBody = document.querySelector("#dft-table tbody");
+            tableBody.innerHTML = ""; // Clear previous results
+
+            dft.forEach((value, k) => {
+                const row = document.createElement("tr");
+
+                const kCell = document.createElement("td");
+                kCell.textContent = k;
+
+                const realCell = document.createElement("td");
+                realCell.textContent = value.real;
+
+                const imagCell = document.createElement("td");
+                imagCell.textContent = value.imag;
+
+                const dftCell = document.createElement("td");
+                dftCell.textContent = `${value.real} + ${value.imag}i`;
+
+                row.appendChild(kCell);
+                row.appendChild(realCell);
+                row.appendChild(imagCell);
+                row.appendChild(dftCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        // FFT Functions
+        function addFFTInput() {
+            const inputContainer = document.getElementById("fft-sequence-inputs");
+            const newInput = document.createElement("input");
+            newInput.type = "number";
+            newInput.step = "any";
+            newInput.value = "0";
+            inputContainer.appendChild(newInput);
+        }
+
+        function removeFFTInput() {
+            const inputContainer = document.getElementById("fft-sequence-inputs");
+            if (inputContainer.children.length > 1) {
+                inputContainer.removeChild(inputContainer.lastElementChild);
+            } else {
+                alert("You need at least one input box.");
+            }
+        }
+
+        function calculateFFT() {
+            const inputs = document.querySelectorAll("#fft-sequence-inputs input");
+            const x = Array.from(inputs).map(input => parseFloat(input.value));
+
+            // Ensure the input length is a power of 2 by padding with zeros
+            const N = nextPowerOfTwo(x.length);
+            while (x.length < N) {
+                x.push(0);
+            }
+
+            const fftResult = fft(x);
+
+            displayFFTResults(fftResult);
+        }
+
+        function nextPowerOfTwo(n) {
+            return 1 << Math.ceil(Math.log2(n));
+        }
+
+        function fft(x) {
+            const N = x.length;
+            if (N <= 1) return x.map(val => ({ real: val, imag: 0 }));
+
+            // Split the input into even and odd indexed elements
+            const even = fft(x.filter((_, i) => i % 2 === 0));
+            const odd = fft(x.filter((_, i) => i % 2 !== 0));
+
+            const result = new Array(N).fill(null).map(() => ({ real: 0, imag: 0 }));
+            for (let k = 0; k < N / 2; k++) {
+                const t = twiddleFactor(k, N);
+                const oddTerm = {
+                    real: t.real * odd[k].real - t.imag * odd[k].imag,
+                    imag: t.real * odd[k].imag + t.imag * odd[k].real,
+                };
+                result[k] = {
+                    real: even[k].real + oddTerm.real,
+                    imag: even[k].imag + oddTerm.imag,
+                };
+                result[k + N / 2] = {
+                    real: even[k].real - oddTerm.real,
+                    imag: even[k].imag - oddTerm.imag,
+                };
+            }
+
+            return result;
+        }
+
+        function twiddleFactor(k, N) {
+            const angle = (-2 * Math.PI * k) / N;
+            return {
+                real: Math.cos(angle),
+                imag: Math.sin(angle),
+            };
+        }
+
+        function displayFFTResults(fftResult) {
+            const tableBody = document.querySelector("#fft-table tbody");
+            tableBody.innerHTML = ""; // Clear previous results
+
+            fftResult.forEach((value, k) => {
+                const row = document.createElement("tr");
+
+                const kCell = document.createElement("td");
+                kCell.textContent = k;
+
+                const realCell = document.createElement("td");
+                realCell.textContent = value.real.toFixed(4);
+
+                const imagCell = document.createElement("td");
+                imagCell.textContent = value.imag.toFixed(4);
+
+                const fftCell = document.createElement("td");
+                fftCell.textContent = `${value.real.toFixed(4)} + ${value.imag.toFixed(4)}i`;
+
+                row.appendChild(kCell);
+                row.appendChild(realCell);
+                row.appendChild(imagCell);
+                row.appendChild(fftCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
