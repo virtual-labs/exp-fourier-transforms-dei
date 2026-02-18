@@ -2,183 +2,104 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the primary purpose of the Fourier Transform?",
+      "question": "The Discrete Fourier Transform (DFT) converts a signal from:",
       "answers": {
-        "a": "To convert a time-domain signal into a frequency-domain representation",
-        "b": "To compress data",
-        "c": "To remove noise from a signal",
-        "d": "To convert analog signals into digital signals"
+        "a": "Frequency domain to time domain",
+        "b": "Time domain to frequency domain",
+        "c": "Matrix form to scalar form",
+        "d": "Continuous to discrete domain only"
       },
-      "explanations": {
-        "a": "The Fourier Transform decomposes a time-domain signal into sinusoidal frequency components.",
-        "b": "Compression is not the main function of a Fourier Transform.",
-        "c": "Noise reduction is an indirect benefit, not the core function.",
-        "d": "This process is performed by ADCs, not Fourier Transforms."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
-
     {
-      "question": "What does the Discrete Fourier Transform (DFT) operate on?",
+      "question": "The DFT of an N-point sequence produces:",
       "answers": {
-        "a": "Continuous signals",
-        "b": "Only analog waveforms",
-        "c": "Discrete-time sampled data",
-        "d": "Random noise sequences exclusively"
+        "a": "N frequency components",
+        "b": "N² frequency components",
+        "c": "One frequency value",
+        "d": "Infinite components"
       },
-      "explanations": {
-        "a": "Continuous signals require the Continuous Fourier Transform, not DFT.",
-        "b": "DFT works on digital samples, not analog signals.",
-        "c": "DFT takes a sequence of sampled data and converts it into frequency components.",
-        "d": "DFT is not restricted to noise data."
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
-      "question": "What is the computational complexity of the DFT?",
+      "question": "The computational complexity of direct DFT is:",
       "answers": {
         "a": "O(N)",
         "b": "O(N log N)",
-        "c": "O(N^2)",
+        "c": "O(N²)",
         "d": "O(log N)"
       },
-      "explanations": {
-        "a": "DFT complexity is higher than linear.",
-        "b": "This is the complexity of FFT, not DFT.",
-        "c": "DFT requires N multiplications for each of N outputs, making it O(N^2).",
-        "d": "DFT is not logarithmic in complexity."
-      },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "correctAnswer": "c"
     },
-
     {
-      "question": "Which algorithm is widely used to compute the DFT efficiently?",
+      "question": "The Fast Fourier Transform (FFT) reduces complexity to:",
       "answers": {
-        "a": "Laplace Transform Algorithm",
-        "b": "Fast Fourier Transform (FFT)",
-        "c": "Wavelet Packet Transform",
-        "d": "Kalman Filtering"
+        "a": "O(N²)",
+        "b": "O(N log N)",
+        "c": "O(N³)",
+        "d": "O(1)"
       },
-      "explanations": {
-        "a": "Laplace Transform is unrelated to DFT acceleration.",
-        "b": "FFT reduces DFT computation time drastically.",
-        "c": "Wavelets are different transforms.",
-        "d": "Kalman Filtering is used for state estimation, not DFT computation."
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
-
     {
-      "question": "Which property of DFT states that both input and output sequences repeat every N samples?",
+      "question": "The fundamental basis functions of DFT are:",
       "answers": {
-        "a": "Linearity",
-        "b": "Circular Convolution",
-        "c": "Periodicity",
-        "d": "Symmetry"
+        "a": "Polynomials",
+        "b": "Complex exponentials",
+        "c": "Logarithmic functions",
+        "d": "Random waves"
       },
-      "explanations": {
-        "a": "Linearity relates to superposition.",
-        "b": "Circular convolution is a result of periodic extension, not periodicity property itself.",
-        "c": "DFT assumes periodicity of N for time and frequency sequences.",
-        "d": "Symmetry applies mostly to real-valued input signals."
-      },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     },
-
     {
-      "question": "The FFT algorithm reduces computation using which strategy?",
+      "question": "Nyquist frequency is defined as:",
       "answers": {
-        "a": "Divide and combine",
-        "b": "Trial and error",
-        "c": "Random sampling",
-        "d": "Neural optimization"
+        "a": "Twice the sampling frequency",
+        "b": "Half the sampling frequency",
+        "c": "Equal to sampling frequency",
+        "d": "Zero frequency"
       },
-      "explanations": {
-        "a": "FFT splits the signal into smaller parts recursively to speed computation.",
-        "b": "Not applicable to FFT.",
-        "c": "FFT does not rely on random sampling.",
-        "d": "FFT is not based on machine learning."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     },
-
     {
-      "question": "The complex exponential used in DFT, e^{-j(2π/N)kn}, is known as a:",
+      "question": "Aliasing occurs when:",
       "answers": {
-        "a": "Kernel",
-        "b": "Twiddle Factor",
-        "c": "Impulse response",
-        "d": "Wavelet function"
+        "a": "Sampling frequency is sufficiently high",
+        "b": "Sampling frequency is less than twice the signal frequency",
+        "c": "Signal is constant",
+        "d": "FFT is applied"
       },
-      "explanations": {
-        "a": "Kernel is a general term but not the standard DSP name here.",
-        "b": "In FFT/DFT terminology, these exponential terms are called twiddle factors.",
-        "c": "Impulse response refers to system behavior, not DFT basis.",
-        "d": "Wavelets are used in a different transform family."
-      },
-      "correctAnswer": "b",
-      "difficulty": "intermediate"
+      "correctAnswer": "b"
     },
-
     {
-      "question": "The Cooley–Tukey algorithm is associated with:",
+      "question": "The inverse DFT (IDFT) is used to:",
       "answers": {
-        "a": "Continuous Fourier Transform",
-        "b": "Wavelet Transform",
-        "c": "Fast Fourier Transform",
-        "d": "Z-transform computation"
+        "a": "Convert frequency domain data back to time domain",
+        "b": "Increase sampling rate",
+        "c": "Reduce noise automatically",
+        "d": "Compute derivatives"
       },
-      "explanations": {
-        "a": "Cooley–Tukey does not compute CFT.",
-        "b": "Not related to wavelets.",
-        "c": "It is the most commonly used FFT algorithm.",
-        "d": "Z-transform has different computation techniques."
-      },
-      "correctAnswer": "c",
-      "difficulty": "intermediate"
+      "correctAnswer": "a"
     },
-
     {
-      "question": "Which of the following is a key advantage of FFT over DFT?",
+      "question": "The FFT algorithm is based on:",
       "answers": {
-        "a": "FFT produces more accurate results than DFT",
-        "b": "FFT requires significantly fewer computations",
-        "c": "FFT eliminates spectral leakage",
-        "d": "FFT only works for real-valued signals"
+        "a": "Divide and conquer strategy",
+        "b": "Matrix inversion",
+        "c": "Differential equations",
+        "d": "Interpolation only"
       },
-      "explanations": {
-        "a": "Both produce the same output mathematically.",
-        "b": "FFT reduces operations drastically using N log N complexity.",
-        "c": "Leakage depends on windowing, not FFT algorithm.",
-        "d": "FFT works on both real and complex signals."
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
+      "correctAnswer": "a"
     },
-
     {
-      "question": "In practical DSP applications, the DFT is mainly used for:",
+      "question": "Convolution in time domain corresponds to:",
       "answers": {
-        "a": "Frequency analysis of discrete-time signals",
-        "b": "Converting digital signals to analog signals",
-        "c": "Generating random numbers",
-        "d": "Performing time-domain smoothing only"
+        "a": "Addition in frequency domain",
+        "b": "Multiplication in frequency domain",
+        "c": "Differentiation in frequency domain",
+        "d": "Integration in frequency domain"
       },
-      "explanations": {
-        "a": "DFT reveals the spectral content of sampled signals.",
-        "b": "DACs perform digital-to-analog conversion.",
-        "c": "DFT has no connection to random number generation.",
-        "d": "DFT is not primarily a smoothing operator."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "b"
     }
   ]
 }
